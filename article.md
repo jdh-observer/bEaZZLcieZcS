@@ -613,9 +613,9 @@ That signal sits inside a near-null overall result, and that context matters. Be
 ### Relationships Between Concepts
 
 <!-- #region tags=["hermeneutics"] -->
-Where the previous subsection asked how much each word changed on its own, this subsection asks how words changed *relative to each other* — whether concepts that were close together in one period drifted apart in another, or whether words that were distant converged. Figure 4 shows the positions of all nineteen terms plotted in the same shared space for both periods; Figure 4 shows how the similarity between specific pairs changed.
+Where the previous subsection asked how much each word changed on its own, this subsection asks how words changed *relative to each other* — whether concepts that were close together in one period drifted apart in another, or whether words that were distant converged. Figure 4 shows the positions of all nineteen terms plotted in the same shared space for both periods; Figure 5 shows how the similarity between specific pairs changed.
 
-Figure 4 encodes the article's central argument in a single chart. The strongest negative bar is *republican*–*virtue* (GPT-2: −0.34): republican moved decisively away from virtue between the Founding era and the Early National period — the contextual signature of its descent from philosophical principle toward partisan credential. Every *liberty* pair, by contrast, points in the positive direction: *liberty* moved closer to *virtue*, *property*, *commerce*, and *slavery* simultaneously. That consistent outward movement across four pairs, confirmed by both instruments, is the relational signature of a word becoming the common currency of multiple competing claims at once.
+Figure 5 encodes the article's central argument in a single chart. The strongest negative bar is *republican*–*virtue* (GPT-2: −0.34): republican moved decisively away from virtue between the Founding era and the Early National period — the contextual signature of its descent from philosophical principle toward partisan credential. Every *liberty* pair, by contrast, points in the positive direction: *liberty* moved closer to *virtue*, *property*, *commerce*, and *slavery* simultaneously. That consistent outward movement across four pairs, confirmed by both instruments, is the relational signature of a word becoming the common currency of multiple competing claims at once.
 
 The instrument disagreement on *republican* is also informative and should not be suppressed. The PPMI baseline shows *republican* moving toward *commerce* and *virtue* in the same letters; GPT-2 shows it moving away in meaning. A word can appear alongside the same neighbours it always did while its function in sentences changes — the divergence is evidence of exactly that kind of rhetorical transition, which the close reading in Section 3.5 then explains.
 <!-- #endregion -->
@@ -660,10 +660,10 @@ Two things are visible in the map. The broad relational structure is stable: the
 <!-- #endregion -->
 
 <!-- #region tags=["hermeneutics"] -->
-The workflow then measured how the cosine similarity between pairs of concepts changed across the two periods. Figure 4 places the contextual GPT-2 measure beside the non-neural PPMI baseline for the eleven tracked pairs.
+The workflow then measured how the cosine similarity between pairs of concepts changed across the two periods. Figure 5 places the contextual GPT-2 measure beside the non-neural PPMI baseline for the eleven tracked pairs.
 <!-- #endregion -->
 
-```python jdh={"module": "object", "object": {"source": ["figure 4: Change in pairwise cosine similarity from the Founding era to the Early National period for GPT-2 (navy) and PPMI (rust). Where the two instruments diverge in sign \u2014 as with republican\u2013commerce and republican\u2013virtue \u2014 close reading is required to resolve the disagreement."]}} tags=["hermeneutics", "figure-relational-*"]
+```python jdh={"module": "object", "object": {"source": ["figure 5: Change in pairwise cosine similarity from the Founding era to the Early National period for GPT-2 (navy) and PPMI (rust). Where the two instruments diverge in sign \u2014 as with republican\u2013commerce and republican\u2013virtue \u2014 close reading is required to resolve the disagreement."]}} tags=["hermeneutics", "figure-relational-*"]
 # ── Figure 4: Relational change, GPT-2 vs PPMI ───────────────────────────────
 # Change in cosine similarity between concept pairs, Founding era → Early National.
 # All values are from the analysis reported in Section 3.

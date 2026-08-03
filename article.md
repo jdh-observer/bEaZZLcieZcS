@@ -517,15 +517,15 @@ For each of the nineteen key terms the workflow sampled up to 100 occurrences pe
 ### Semantic Change and Its Significance
 
 <!-- #region tags=["hermeneutics"] -->
-Figure 2 reports how much each of the nineteen key terms changed between the Founding era and the Early National period. The horizontal bars show a *z-score* — the further a bar extends to the right, the more that term's usage shifted. The critical result, noted in the caption, is that after correcting for twenty-six simultaneous tests, *no term's change reaches statistical significance at the conventional threshold*. This is an honest finding rather than a failure of the method: the near-null result is itself informative, identifying leads worth pursuing rather than settled conclusions. The five terms with the lowest corrected p-values (0.078) — *republican*, *government*, *capital*, *country*, and *bondage* — are the leads the close reading then pursues.
+Figure 3 reports how much each of the nineteen key terms changed between the Founding era and the Early National period. The horizontal bars show a *z-score* — the further a bar extends to the right, the more that term's usage shifted. The critical result, noted in the caption, is that after correcting for twenty-six simultaneous tests, *no term's change reaches statistical significance at the conventional threshold*. This is an honest finding rather than a failure of the method: the near-null result is itself informative, identifying leads worth pursuing rather than settled conclusions. The five terms with the lowest corrected p-values (0.078) — *republican*, *government*, *capital*, *country*, and *bondage* — are the leads the close reading then pursues.
 <!-- #endregion -->
 
 <!-- #region tags=["narrative"] -->
-For each key term the workflow measured the average pairwise distance (APD) between its Founding-era and Early-National occurrences and tested that distance against a permutation null. Figure 2 reports the result for the primary instrument, the corpus-trained GPT-2 model.
+For each key term the workflow measured the average pairwise distance (APD) between its Founding-era and Early-National occurrences and tested that distance against a permutation null. Figure 3 reports the result for the primary instrument, the corpus-trained GPT-2 model.
 <!-- #endregion -->
 
-```python jdh={"module": "object", "object": {"source": ["figure 2: APD permutation z-scores (GPT-2). Bars are dark where a term clears the uncorrected permutation null at p \u2264 0.05; landmark words are grey. After Benjamini\u2013Hochberg correction for 26 simultaneous tests, no term reaches significance at p \u2264 0.05."]}} tags=["hermeneutics", "figure-apd-*"]
-# ── Figure 2: APD permutation z-scores (GPT-2 primary instrument) ────────────
+```python jdh={"module": "object", "object": {"source": ["figure 3: APD permutation z-scores (GPT-2). Bars are dark where a term clears the uncorrected permutation null at p \u2264 0.05; landmark words are grey. After Benjamini\u2013Hochberg correction for 26 simultaneous tests, no term reaches significance at p \u2264 0.05."]}} tags=["hermeneutics", "figure-apd-*"]
+# ── Figure 3: APD permutation z-scores (GPT-2 primary instrument) ────────────
 # Data: actual permutation-test results from the Founders corpus analysis.
 # z-scores and p-values are the values reported in Section 3.
 # Terms with adjusted p = 0.078 are the five lowest in the Benjamini-Hochberg

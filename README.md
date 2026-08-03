@@ -1,6 +1,6 @@
 # Tracing Semantic Change in Historical Corpora: A Reproducible Word-Embedding Workflow for Intellectual History
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jdh-observer/bEaZZLcieZc/main?filepath=article.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jdh-observer/bEaZZLcieZcS/main?filepath=article.ipynb)
 
 
 

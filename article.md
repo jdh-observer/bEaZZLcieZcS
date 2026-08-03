@@ -625,7 +625,7 @@ Figure 4 gives an overview: a two-dimensional projection of the key terms in the
 <!-- #endregion -->
 
 ```python jdh={"module": "object", "object": {"source": ["figure 5: Key terms projected into one shared GPT-2 coordinate space using PCA (L2-normalized, mean-centered prototype vectors). Both panels use the same projection, so positions are directly comparable across periods."]}} tags=["hermeneutics", "figure-cross-*"]
-# ── Figure 5: Semantic relationship map ──────────────────────────────────────
+# ── Figure 6: Semantic relationship map ──────────────────────────────────────
 # This figure requires the pre-computed GPT-2 prototype embedding vectors
 # (embeddings.npz + embeddings_manifest.json from the repository data layer).
 # The full generation code is in /script/make_figures.py.
@@ -735,11 +735,11 @@ The *government–state* pair shows cross-instrument agreement — both instrume
 ### Agreement Across Instruments
 
 <!-- #region tags=["hermeneutics"] -->
-*Cross-instrument agreement is the basis for deciding which findings to trust.* The key principle of the workflow is that a finding is only treated as evidential in proportion to how many of the three independent instruments agree on it. Figure 5 shows each term's rank by measured change across all three instruments. The terms where all three instruments agree — *republican* and *capital* — are the findings with the strongest claim to reflect something in the historical record rather than an artefact of one model's assumptions. The terms where the instruments disagree — particularly *government* and *state* — are flagged as leads that require close reading to resolve, not settled results.
+*Cross-instrument agreement is the basis for deciding which findings to trust.* The key principle of the workflow is that a finding is only treated as evidential in proportion to how many of the three independent instruments agree on it. Figure 6 shows each term's rank by measured change across all three instruments. The terms where all three instruments agree — *republican* and *capital* — are the findings with the strongest claim to reflect something in the historical record rather than an artefact of one model's assumptions. The terms where the instruments disagree — particularly *government* and *state* — are flagged as leads that require close reading to resolve, not settled results.
 <!-- #endregion -->
 
 <!-- #region tags=["narrative"] -->
-Comparing the three instruments on which terms changed most (Figure 5) gives the demonstration its firmest result and its main caution. One term, *republican*, ranks near the top of both transformer models and in the upper range of the PPMI baseline; *capital* is corroborated across all three as well. By contrast *government* and *state*, which both transformer models rank near the top, fall to the very bottom of the PPMI ranking: their change is visible to the contextual models but not to the co-occurrence baseline, and so cannot yet be called robust.
+Comparing the three instruments on which terms changed most (Figure 6) gives the demonstration its firmest result and its main caution. One term, *republican*, ranks near the top of both transformer models and in the upper range of the PPMI baseline; *capital* is corroborated across all three as well. By contrast *government* and *state*, which both transformer models rank near the top, fall to the very bottom of the PPMI ranking: their change is visible to the contextual models but not to the co-occurrence baseline, and so cannot yet be called robust.
 <!-- #endregion -->
 
 ```python jdh={"module": "object", "object": {"source": ["figure 3: Rank of each key term by measured change in the three instruments (rank 1 = changed most). Republican (red), government (navy), and state (green) are highlighted. Lines near horizontal indicate cross-instrument agreement; lines that rise or fall sharply indicate disagreement."]}} tags=["hermeneutics", "figure-relationship-*"]

@@ -72,11 +72,12 @@ It does. Two findings emerge. The first describes a downward movement — a theo
 This distinction — between a word's *meaning* and its *use* — is the finding's precise claim, and it bears directly on the Appleby–Pocock–Wood controversy. That debate asked whether republican ideology was displaced by liberal or commercial vocabulary: a question about which *ideas* prevailed. The measurement suggests both sides were tracking something real, but in different registers of the same word's history. The semantic content of republican ideology was not displaced; its social function was transformed. The word stayed recognisable enough to travel across forty years; what changed was the job it was hired to do. The debate may have been asking a question the evidence could not cleanly answer because it conflated meaning with use — and contextual embeddings are precisely the instrument needed to separate them: co-occurrence alone would suggest the word moved with the partisan vocabulary; contextual embeddings show it retained its own distinct register throughout.
 <!-- #endregion -->
 
-<!-- #region jdh={"module": "object", "object": {"source": ["tables 2-4: Sampled founding-era and early-national passages for the three strongest candidates (*republican*, *government*, *capital*). Each passage is drawn from a random sample of the top-ranked occurrences as determined by the APD analysis. Italics mark the target term in context."]}} tags=["narrative"] -->
+<!-- #region jdh={"module": "object", "object": {"source": []}} tags=["narrative"] -->
 The tables below display the actual sentences surfaced by the workflow for the three strongest candidates — the founding-era and early-national occurrences the measurement identified as the sites of change. These are not selected for rhetorical effect; they are a random sample from the top-ranked occurrences as determined by the APD scores. A historian reading them is doing exactly what the workflow is designed to support.
+tables 2-4: Sampled founding-era and early-national passages for the three strongest candidates (*republican*, *government*, *capital*). Each passage is drawn from a random sample of the top-ranked occurrences as determined by the APD analysis. Italics mark the target term in context.
+<!-- #endregion -->
 
-**Table 2: *Republican* — sampled passages by period**
-
+<!-- #region jdh={"module": "object", "object": {"source": ["Table 2: *Republican* \u2014 sampled passages by period"]}} tags=["table-2"] -->
 | Period | Passage (sampled occurrence) |
 |---|---|
 | Founding era | "We shall never be on a solid footing till we establish a **republican** form of government." |
@@ -88,8 +89,9 @@ The tables below display the actual sentences surfaced by the workflow for the t
 | Early National | "The **Republican** Ticket for the ensuing election consists of the following gentlemen." |
 | Early National | "He is warmly attached to the **republican** cause and has suffered for his principles." |
 
-**Table 3: *Government* — sampled passages by period**
+<!-- #endregion -->
 
+<!-- #region jdh={"module": "object", "object": {"source": ["Table 3: *Government* \u2014 sampled passages by period"]}} tags=["table-3"] -->
 | Period | Passage (sampled occurrence) |
 |---|---|
 | Founding era | "The present unsettled state of **government** is truly alarming." |
@@ -99,10 +101,11 @@ The tables below display the actual sentences surfaced by the workflow for the t
 | Early National | "This **Government** cannot with propriety interpose in the dispute." |
 | Early National | "The British **Government** has at length taken its final resolution." |
 | Early National | "The Spanish **Government** has refused to ratify the treaty." |
-| Early National | "The measures of this **Government** are not to be discussed in that manner." |
+| Early National | "The measures of this **Government** are not to be discussed in that manner." | 
 
-**Table 4: *Capital* — sampled passages by period**
+<!-- #endregion -->
 
+<!-- #region jdh={"module": "object", "object": {"source": ["Table 4: *Capital* \u2014 sampled passages by period"]}} tags=["table-4"] -->
 | Period | Passage (sampled occurrence) |
 |---|---|
 | Founding era | "This is a **capital** branch of the business and must not be neglected." |

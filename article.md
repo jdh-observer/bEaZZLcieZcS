@@ -74,10 +74,10 @@ This distinction — between a word's *meaning* and its *use* — is the finding
 
 <!-- #region jdh={"module": "object", "object": {"source": []}} tags=["narrative"] -->
 The tables below display the actual sentences surfaced by the workflow for the three strongest candidates — the founding-era and early-national occurrences the measurement identified as the sites of change. These are not selected for rhetorical effect; they are a random sample from the top-ranked occurrences as determined by the APD scores. A historian reading them is doing exactly what the workflow is designed to support.
-tables 2-4: Sampled founding-era and early-national passages for the three strongest candidates (*republican*, *government*, *capital*). Each passage is drawn from a random sample of the top-ranked occurrences as determined by the APD analysis. Italics mark the target term in context.
+tables 1-3: Sampled founding-era and early-national passages for the three strongest candidates (*republican*, *government*, *capital*). Each passage is drawn from a random sample of the top-ranked occurrences as determined by the APD analysis. Italics mark the target term in context.
 <!-- #endregion -->
 
-<!-- #region jdh={"module": "object", "object": {"source": ["*Republican* \u2014 sampled passages by period"]}} tags=["table-2"] -->
+<!-- #region jdh={"module": "object", "object": {"source": ["*Republican* \u2014 sampled passages by period"]}} tags=["table-1"] -->
 | Period | Passage (sampled occurrence) |
 |---|---|
 | Founding era | "We shall never be on a solid footing till we establish a **republican** form of government." |
@@ -91,7 +91,7 @@ tables 2-4: Sampled founding-era and early-national passages for the three stron
 
 <!-- #endregion -->
 
-<!-- #region jdh={"module": "object", "object": {"source": ["*Government* \u2014 sampled passages by period"]}} tags=["table-3"] -->
+<!-- #region jdh={"module": "object", "object": {"source": ["*Government* \u2014 sampled passages by period"]}} tags=["table-2"] -->
 | Period | Passage (sampled occurrence) |
 |---|---|
 | Founding era | "The present unsettled state of **government** is truly alarming." |
@@ -105,7 +105,7 @@ tables 2-4: Sampled founding-era and early-national passages for the three stron
 
 <!-- #endregion -->
 
-<!-- #region jdh={"module": "object", "object": {"source": ["*Capital* \u2014 sampled passages by period"]}} tags=["table-4"] -->
+<!-- #region jdh={"module": "object", "object": {"source": ["*Capital* \u2014 sampled passages by period"]}} tags=["table-3"] -->
 | Period | Passage (sampled occurrence) |
 |---|---|
 | Founding era | "This is a **capital** branch of the business and must not be neglected." |
@@ -506,7 +506,7 @@ The demonstration corpus comprises 160,280 documents of the American Founders' w
 
 For each of the nineteen key terms the workflow sampled up to 100 occurrences per period. Most terms reached that ceiling in both periods; the exceptions are *republicanism* (76 Founding-era occurrences), *democracy* (75), and the slavery vocabulary *bondage* (39) and *servitude* (39), which were genuinely rarer in founding-era text. Results for these low-count terms are reported but read with corresponding caution.
 
-<!-- #region jdh={"module": "object", "object": {"source": ["Founders corpus composition by period. The 1790s are excluded as a deliberate buffer between the two compared periods."]}} tags=["table-1"] -->
+<!-- #region jdh={"module": "object", "object": {"source": ["Founders corpus composition by period. The 1790s are excluded as a deliberate buffer between the two compared periods."]}} tags=["table-4"] -->
 | Period | Decades | Documents |
 |---|---|---|
 | Founding era | 1770s–1780s | 47,217 |

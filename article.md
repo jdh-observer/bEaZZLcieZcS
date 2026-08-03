@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    formats: ipynb,md
     text_representation:
       extension: .md
       format_name: markdown
@@ -12,7 +13,7 @@ jupyter:
     name: python3
 ---
 
-<!-- #region tags=["title"] -->
+<!-- #region editable=true slideshow={"slide_type": ""} tags=["title"] -->
 # Tracing Semantic Change in Historical Corpora: A Reproducible Word-Embedding Workflow for Intellectual History
 ### With a demonstration on the writings of the American Founders
 <!-- #endregion -->
@@ -52,11 +53,11 @@ The workflow departs from standard diachronic practice by training a language mo
 
 ## Introduction
 
-<!-- #region citation-manager={"citations": {"": []}} tags=["narrative"] -->
+<!-- #region citation-manager={"citations": {"": []}} editable=true slideshow={"slide_type": ""} tags=["narrative"] -->
 The meanings of politically charged words change, and tracking those changes is one of the oldest tasks in intellectual history. The historiography of the American founding has built a substantial literature on the problem: from Bailyn on the ideological origins of the Revolution to Wood on the creation of the republic, from Pocock on the Machiavellian moment to Rodgers's sharp observation that *republicanism* was less a coherent ideology than a career concept, perpetually overextended and reshaped by the arguments historians used it to describe <cite data-cite="2237419/LWGJZ7XF"></cite>. That debate has been conducted through close reading of selected texts — canonical letters, pamphlets, Federalist numbers — and it has produced extraordinary work. It has also hit a ceiling. Close reading, however skillful, can trace a concept's career through the texts the historian chooses to read. It cannot establish what the word was doing across a corpus of tens of thousands of documents it would take many lifetimes to read. The consequences of mass digitisation for historical method — both what it enables and what biases it introduces — have been analysed by <cite data-cite="2237419/FBHS99AM"></cite> in terms    that apply directly to any corpus-based inquiry. Reinhart Koselleck's *Begriffsgeschichte* identified this problem precisely — that the semantic careers of politically charged concepts must be reconstructed from actual usage, not assumed stable <cite data-cite="2237419/WLSQGL9Z"></cite> — but the *Geschichtliche Grundbegriffe* worked through carefully curated canonical texts and had no way to ask what ordinary correspondence was doing with the same words.
 <!-- #endregion -->
 
-<!-- #region citation-manager={"citations": {"": []}} tags=["narrative"] -->
+<!-- #region citation-manager={"citations": {"": []}} editable=true slideshow={"slide_type": ""} tags=["narrative"] -->
 This article proposes a method for historians that addresses that problem, and demonstrates it on the Founders' writings. The method is word-embedding analysis: a computational technique for measuring how the semantic neighborhood of a word changes over time, across a large corpus, at a scale no historian can manage through close reading alone. It is not a replacement for close reading — close reading is a required step in any responsible use of this approach. But it changes what close reading is *for*: rather than ranging across a corpus in search of representative examples, it targets the passages the measurement identifies as the sites of change, and asks what happened there. The result is a combination of scaled observation and close interpretation that the digital history literature calls *scaled reading* <cite data-cite="2237419/D62F2C9S"></cite> — and that is, in practice, the movement between pattern and document that historians have always made, now made tractable at a scale the pattern was previously invisible.
 
 The method relies on transformer language models trained directly on the historical corpus. Transformer models encode each word in terms of its surrounding context rather than as a fixed vector: the same word in two different sentences produces two different internal representations. That contextual sensitivity is what makes them suited to this problem. When a word's functional role changes — when it stops being theorised and starts being deployed as a credential — the contexts it appears in change with it, and the model's representations capture that shift directly. Co-occurrence models can detect that a word moved into new company; contextual models can detect that the word itself was doing something different even in familiar company.
@@ -72,11 +73,12 @@ It does. Two findings emerge. The first describes a downward movement — a theo
 This distinction — between a word's *meaning* and its *use* — is the finding's precise claim, and it bears directly on the Appleby–Pocock–Wood controversy. That debate asked whether republican ideology was displaced by liberal or commercial vocabulary: a question about which *ideas* prevailed. The measurement suggests both sides were tracking something real, but in different registers of the same word's history. The semantic content of republican ideology was not displaced; its social function was transformed. The word stayed recognisable enough to travel across forty years; what changed was the job it was hired to do. The debate may have been asking a question the evidence could not cleanly answer because it conflated meaning with use — and contextual embeddings are precisely the instrument needed to separate them: co-occurrence alone would suggest the word moved with the partisan vocabulary; contextual embeddings show it retained its own distinct register throughout.
 <!-- #endregion -->
 
-<!-- #region jdh={"module": "object", "object": {"source": ["tables 2-4: Sampled founding-era and early-national passages for the three strongest candidates (*republican*, *government*, *capital*). Each passage is drawn from a random sample of the top-ranked occurrences as determined by the APD analysis. Italics mark the target term in context."]}} tags=["narrative"] -->
+<!-- #region jdh={"module": "object", "object": {"source": []}} tags=["narrative"] -->
 The tables below display the actual sentences surfaced by the workflow for the three strongest candidates — the founding-era and early-national occurrences the measurement identified as the sites of change. These are not selected for rhetorical effect; they are a random sample from the top-ranked occurrences as determined by the APD scores. A historian reading them is doing exactly what the workflow is designed to support.
+tables 1-3: Sampled founding-era and early-national passages for the three strongest candidates (*republican*, *government*, *capital*). Each passage is drawn from a random sample of the top-ranked occurrences as determined by the APD analysis. Italics mark the target term in context.
+<!-- #endregion -->
 
-**Table 2: *Republican* — sampled passages by period**
-
+<!-- #region jdh={"module": "object", "object": {"source": ["*Republican* \u2014 sampled passages by period"]}} tags=["table-1"] -->
 | Period | Passage (sampled occurrence) |
 |---|---|
 | Founding era | "We shall never be on a solid footing till we establish a **republican** form of government." |
@@ -88,8 +90,9 @@ The tables below display the actual sentences surfaced by the workflow for the t
 | Early National | "The **Republican** Ticket for the ensuing election consists of the following gentlemen." |
 | Early National | "He is warmly attached to the **republican** cause and has suffered for his principles." |
 
-**Table 3: *Government* — sampled passages by period**
+<!-- #endregion -->
 
+<!-- #region jdh={"module": "object", "object": {"source": ["*Government* \u2014 sampled passages by period"]}} tags=["table-2"] -->
 | Period | Passage (sampled occurrence) |
 |---|---|
 | Founding era | "The present unsettled state of **government** is truly alarming." |
@@ -99,10 +102,11 @@ The tables below display the actual sentences surfaced by the workflow for the t
 | Early National | "This **Government** cannot with propriety interpose in the dispute." |
 | Early National | "The British **Government** has at length taken its final resolution." |
 | Early National | "The Spanish **Government** has refused to ratify the treaty." |
-| Early National | "The measures of this **Government** are not to be discussed in that manner." |
+| Early National | "The measures of this **Government** are not to be discussed in that manner." | 
 
-**Table 4: *Capital* — sampled passages by period**
+<!-- #endregion -->
 
+<!-- #region jdh={"module": "object", "object": {"source": ["*Capital* \u2014 sampled passages by period"]}} tags=["table-3"] -->
 | Period | Passage (sampled occurrence) |
 |---|---|
 | Founding era | "This is a **capital** branch of the business and must not be neglected." |
@@ -170,8 +174,8 @@ print("  pip install matplotlib numpy pandas")
 print("  (or: docker-compose up  in the journal-of-digital-history-jupyter-stack)")
 ```
 
-<!-- #region tags=["hermeneutics"] -->
-*Figure 0 below shows the complete analytical pipeline as a workflow diagram. Read it left to right across three columns.*
+<!-- #region editable=true slideshow={"slide_type": ""} tags=["hermeneutics"] -->
+*Figure 1 below shows the complete analytical pipeline as a workflow diagram. Read it left to right across three columns.*
 
 *The left column (blue and red) is the corpus layer: assembling the documents, recovering dates, dividing into periods, and training the language model from scratch on the full corpus. The red boxes mark the steps that produce the embedding vectors — the raw material all three measuring instruments share.*
 
@@ -180,8 +184,8 @@ print("  (or: docker-compose up  in the journal-of-digital-history-jupyter-stack
 *The right column is validation and interpretation: the three instruments converge on a cross-instrument ranking, which then directs targeted close reading of the actual passages, which produces the historical argument. Each step in the diagram is documented in Section 2; the demonstration in Section 3 follows this structure.*
 <!-- #endregion -->
 
-```python jdh={"module": "object", "object": {"source": ["figure 0: Analytical pipeline from the Founders corpus to historical argument. The three measuring instruments (GPT-2, ModernBERT, PPMI) operate in parallel on the same corpus; cross-instrument agreement determines evidential weight."]}} tags=["hermeneutics", "figure-workflow-*"]
-# ── Figure 0: Workflow diagram ────────────────────────────────────────────────
+```python jdh={"module": "object", "object": {"source": ["Analytical pipeline from the Founders corpus to historical argument. The three measuring instruments (GPT-2, ModernBERT, PPMI) operate in parallel on the same corpus; cross-instrument agreement determines evidential weight."]}} tags=["hermeneutics", "figure-workflow-*"]
+# ── Figure 1: Workflow diagram ────────────────────────────────────────────────
 # This figure summarises the complete analytical pipeline described in Section 2.
 # It is generated entirely from matplotlib — no external data required.
 
@@ -298,11 +302,11 @@ To make change visible, the corpus is divided into periods. Segmentation is an i
 <!-- #endregion -->
 
 <!-- #region tags=["hermeneutics"] -->
-*Figure 1 below is generated from the documented document-count data for the Founders corpus. The code is fully self-contained and will reproduce the figure on any machine with matplotlib installed.*
+*Figure 2 below is generated from the documented document-count data for the Founders corpus. The code is fully self-contained and will reproduce the figure on any machine with matplotlib installed.*
 <!-- #endregion -->
 
-```python jdh={"module": "object", "object": {"source": ["figure 1: Documents per decade in the Founders corpus. Navy bars show the Founding era (1770\u20131789); rust bars show the Early National period (1800\u20131819). The 1790s are excluded as a deliberate buffer between the two compared periods."]}} tags=["hermeneutics", "figure-corpus-*"]
-# ── Figure 1: Founders corpus composition by decade ──────────────────────────
+```python jdh={"module": "object", "object": {"source": ["Documents per decade in the Founders corpus. Navy bars show the Founding era (1770\u20131789); rust bars show the Early National period (1800\u20131819). The 1790s are excluded as a deliberate buffer between the two compared periods."]}} tags=["hermeneutics", "figure-corpus-*"]
+# ── Figure 2: Founders corpus composition by decade ──────────────────────────
 # All values come from the corpus scan documented in Section 3.
 # This cell is fully self-contained and reproducible.
 
@@ -498,31 +502,31 @@ Validation is part of the method, not an afterthought. Four checks are built in.
 <!-- #region tags=["narrative"] -->
 This section applies the workflow to the Founders corpus and reports the results. It is organized to mirror Section 2 so that a reader can see each step's output. The results are reported in full, including the places where the instruments disagree, because a methods paper is validated by the honesty of its demonstration rather than by the tidiness of its findings.
 
-The demonstration corpus comprises 160,280 documents of the American Founders' writings. Because the documents carry no explicit date field, a year was recovered for each by parsing datelines from its text; 91,967 documents fall within the two compared periods. Their distribution by decade is shown in Figure 1.
+The demonstration corpus comprises 160,280 documents of the American Founders' writings. Because the documents carry no explicit date field, a year was recovered for each by parsing datelines from its text; 91,967 documents fall within the two compared periods. Their distribution by decade is shown in Figure 2.
 <!-- #endregion -->
 
-<!-- #region jdh={"module": "object", "object": {"source": ["table 1: Founders corpus composition by period. The 1790s are excluded as a deliberate buffer between the two compared periods."]}} tags=["table-1"] -->
+For each of the nineteen key terms the workflow sampled up to 100 occurrences per period. Most terms reached that ceiling in both periods; the exceptions are *republicanism* (76 Founding-era occurrences), *democracy* (75), and the slavery vocabulary *bondage* (39) and *servitude* (39), which were genuinely rarer in founding-era text. Results for these low-count terms are reported but read with corresponding caution.
+
+<!-- #region jdh={"module": "object", "object": {"source": ["Founders corpus composition by period. The 1790s are excluded as a deliberate buffer between the two compared periods."]}} tags=["table-4"] -->
 | Period | Decades | Documents |
 |---|---|---|
 | Founding era | 1770s–1780s | 47,217 |
 | Early National | 1800s–1810s | 43,373 |
 | (excluded buffer) | 1790s | 29,416 |
-
-For each of the nineteen key terms the workflow sampled up to 100 occurrences per period. Most terms reached that ceiling in both periods; the exceptions are *republicanism* (76 Founding-era occurrences), *democracy* (75), and the slavery vocabulary *bondage* (39) and *servitude* (39), which were genuinely rarer in founding-era text. Results for these low-count terms are reported but read with corresponding caution.
 <!-- #endregion -->
 
 ### Semantic Change and Its Significance
 
 <!-- #region tags=["hermeneutics"] -->
-Figure 2 reports how much each of the nineteen key terms changed between the Founding era and the Early National period. The horizontal bars show a *z-score* — the further a bar extends to the right, the more that term's usage shifted. The critical result, noted in the caption, is that after correcting for twenty-six simultaneous tests, *no term's change reaches statistical significance at the conventional threshold*. This is an honest finding rather than a failure of the method: the near-null result is itself informative, identifying leads worth pursuing rather than settled conclusions. The five terms with the lowest corrected p-values (0.078) — *republican*, *government*, *capital*, *country*, and *bondage* — are the leads the close reading then pursues.
+Figure 3 reports how much each of the nineteen key terms changed between the Founding era and the Early National period. The horizontal bars show a *z-score* — the further a bar extends to the right, the more that term's usage shifted. The critical result, noted in the caption, is that after correcting for twenty-six simultaneous tests, *no term's change reaches statistical significance at the conventional threshold*. This is an honest finding rather than a failure of the method: the near-null result is itself informative, identifying leads worth pursuing rather than settled conclusions. The five terms with the lowest corrected p-values (0.078) — *republican*, *government*, *capital*, *country*, and *bondage* — are the leads the close reading then pursues.
 <!-- #endregion -->
 
 <!-- #region tags=["narrative"] -->
-For each key term the workflow measured the average pairwise distance (APD) between its Founding-era and Early-National occurrences and tested that distance against a permutation null. Figure 2 reports the result for the primary instrument, the corpus-trained GPT-2 model.
+For each key term the workflow measured the average pairwise distance (APD) between its Founding-era and Early-National occurrences and tested that distance against a permutation null. Figure 3 reports the result for the primary instrument, the corpus-trained GPT-2 model.
 <!-- #endregion -->
 
-```python jdh={"module": "object", "object": {"source": ["figure 2: APD permutation z-scores (GPT-2). Bars are dark where a term clears the uncorrected permutation null at p \u2264 0.05; landmark words are grey. After Benjamini\u2013Hochberg correction for 26 simultaneous tests, no term reaches significance at p \u2264 0.05."]}} tags=["hermeneutics", "figure-apd-*"]
-# ── Figure 2: APD permutation z-scores (GPT-2 primary instrument) ────────────
+```python jdh={"module": "object", "object": {"source": ["APD permutation z-scores (GPT-2). Bars are dark where a term clears the uncorrected permutation null at p \u2264 0.05; landmark words are grey. After Benjamini\u2013Hochberg correction for 26 simultaneous tests, no term reaches significance at p \u2264 0.05."]}} tags=["hermeneutics", "figure-apd-*"]
+# ── Figure 3: APD permutation z-scores (GPT-2 primary instrument) ────────────
 # Data: actual permutation-test results from the Founders corpus analysis.
 # z-scores and p-values are the values reported in Section 3.
 # Terms with adjusted p = 0.078 are the five lowest in the Benjamini-Hochberg
@@ -610,19 +614,19 @@ That signal sits inside a near-null overall result, and that context matters. Be
 ### Relationships Between Concepts
 
 <!-- #region tags=["hermeneutics"] -->
-Where the previous subsection asked how much each word changed on its own, this subsection asks how words changed *relative to each other* — whether concepts that were close together in one period drifted apart in another, or whether words that were distant converged. Figure 3 shows the positions of all nineteen terms plotted in the same shared space for both periods; Figure 4 shows how the similarity between specific pairs changed.
+Where the previous subsection asked how much each word changed on its own, this subsection asks how words changed *relative to each other* — whether concepts that were close together in one period drifted apart in another, or whether words that were distant converged. Figure 4 shows the positions of all nineteen terms plotted in the same shared space for both periods; Figure 5 shows how the similarity between specific pairs changed.
 
-Figure 4 encodes the article's central argument in a single chart. The strongest negative bar is *republican*–*virtue* (GPT-2: −0.34): republican moved decisively away from virtue between the Founding era and the Early National period — the contextual signature of its descent from philosophical principle toward partisan credential. Every *liberty* pair, by contrast, points in the positive direction: *liberty* moved closer to *virtue*, *property*, *commerce*, and *slavery* simultaneously. That consistent outward movement across four pairs, confirmed by both instruments, is the relational signature of a word becoming the common currency of multiple competing claims at once.
+Figure 5 encodes the article's central argument in a single chart. The strongest negative bar is *republican*–*virtue* (GPT-2: −0.34): republican moved decisively away from virtue between the Founding era and the Early National period — the contextual signature of its descent from philosophical principle toward partisan credential. Every *liberty* pair, by contrast, points in the positive direction: *liberty* moved closer to *virtue*, *property*, *commerce*, and *slavery* simultaneously. That consistent outward movement across four pairs, confirmed by both instruments, is the relational signature of a word becoming the common currency of multiple competing claims at once.
 
 The instrument disagreement on *republican* is also informative and should not be suppressed. The PPMI baseline shows *republican* moving toward *commerce* and *virtue* in the same letters; GPT-2 shows it moving away in meaning. A word can appear alongside the same neighbours it always did while its function in sentences changes — the divergence is evidence of exactly that kind of rhetorical transition, which the close reading in Section 3.5 then explains.
 <!-- #endregion -->
 
 <!-- #region tags=["hermeneutics"] -->
-Figure 3 gives an overview: a two-dimensional projection of the key terms in the single shared coordinate space, one panel per period. Because one model supplies both periods, the panels share one projection and are directly comparable — the alignment problem discussed in Section 2 simply does not arise.
+Figure 4 gives an overview: a two-dimensional projection of the key terms in the single shared coordinate space, one panel per period. Because one model supplies both periods, the panels share one projection and are directly comparable — the alignment problem discussed in Section 2 simply does not arise.
 <!-- #endregion -->
 
-```python jdh={"module": "object", "object": {"source": ["figure 5: Key terms projected into one shared GPT-2 coordinate space using PCA (L2-normalized, mean-centered prototype vectors). Both panels use the same projection, so positions are directly comparable across periods."]}} tags=["hermeneutics", "figure-cross-*"]
-# ── Figure 5: Semantic relationship map ──────────────────────────────────────
+```python jdh={"module": "object", "object": {"source": ["Key terms projected into one shared GPT-2 coordinate space using PCA (L2-normalized, mean-centered prototype vectors). Both panels use the same projection, so positions are directly comparable across periods."]}} tags=["hermeneutics", "figure-cross-*"]
+# ── Figure 6: Semantic relationship map ──────────────────────────────────────
 # This figure requires the pre-computed GPT-2 prototype embedding vectors
 # (embeddings.npz + embeddings_manifest.json from the repository data layer).
 # The full generation code is in /script/make_figures.py.
@@ -657,10 +661,10 @@ Two things are visible in the map. The broad relational structure is stable: the
 <!-- #endregion -->
 
 <!-- #region tags=["hermeneutics"] -->
-The workflow then measured how the cosine similarity between pairs of concepts changed across the two periods. Figure 4 places the contextual GPT-2 measure beside the non-neural PPMI baseline for the eleven tracked pairs.
+The workflow then measured how the cosine similarity between pairs of concepts changed across the two periods. Figure 5 places the contextual GPT-2 measure beside the non-neural PPMI baseline for the eleven tracked pairs.
 <!-- #endregion -->
 
-```python jdh={"module": "object", "object": {"source": ["figure 4: Change in pairwise cosine similarity from the Founding era to the Early National period for GPT-2 (navy) and PPMI (rust). Where the two instruments diverge in sign \u2014 as with republican\u2013commerce and republican\u2013virtue \u2014 close reading is required to resolve the disagreement."]}} tags=["hermeneutics", "figure-relational-*"]
+```python jdh={"module": "object", "object": {"source": ["Change in pairwise cosine similarity from the Founding era to the Early National period for GPT-2 (navy) and PPMI (rust). Where the two instruments diverge in sign \u2014 as with republican\u2013commerce and republican\u2013virtue \u2014 close reading is required to resolve the disagreement."]}} tags=["hermeneutics", "figure-relational-*"]
 # ── Figure 4: Relational change, GPT-2 vs PPMI ───────────────────────────────
 # Change in cosine similarity between concept pairs, Founding era → Early National.
 # All values are from the analysis reported in Section 3.
@@ -732,15 +736,15 @@ The *government–state* pair shows cross-instrument agreement — both instrume
 ### Agreement Across Instruments
 
 <!-- #region tags=["hermeneutics"] -->
-*Cross-instrument agreement is the basis for deciding which findings to trust.* The key principle of the workflow is that a finding is only treated as evidential in proportion to how many of the three independent instruments agree on it. Figure 5 shows each term's rank by measured change across all three instruments. The terms where all three instruments agree — *republican* and *capital* — are the findings with the strongest claim to reflect something in the historical record rather than an artefact of one model's assumptions. The terms where the instruments disagree — particularly *government* and *state* — are flagged as leads that require close reading to resolve, not settled results.
+*Cross-instrument agreement is the basis for deciding which findings to trust.* The key principle of the workflow is that a finding is only treated as evidential in proportion to how many of the three independent instruments agree on it. Figure 6 shows each term's rank by measured change across all three instruments. The terms where all three instruments agree — *republican* and *capital* — are the findings with the strongest claim to reflect something in the historical record rather than an artefact of one model's assumptions. The terms where the instruments disagree — particularly *government* and *state* — are flagged as leads that require close reading to resolve, not settled results.
 <!-- #endregion -->
 
 <!-- #region tags=["narrative"] -->
-Comparing the three instruments on which terms changed most (Figure 5) gives the demonstration its firmest result and its main caution. One term, *republican*, ranks near the top of both transformer models and in the upper range of the PPMI baseline; *capital* is corroborated across all three as well. By contrast *government* and *state*, which both transformer models rank near the top, fall to the very bottom of the PPMI ranking: their change is visible to the contextual models but not to the co-occurrence baseline, and so cannot yet be called robust.
+Comparing the three instruments on which terms changed most (Figure 6) gives the demonstration its firmest result and its main caution. One term, *republican*, ranks near the top of both transformer models and in the upper range of the PPMI baseline; *capital* is corroborated across all three as well. By contrast *government* and *state*, which both transformer models rank near the top, fall to the very bottom of the PPMI ranking: their change is visible to the contextual models but not to the co-occurrence baseline, and so cannot yet be called robust.
 <!-- #endregion -->
 
-```python jdh={"module": "object", "object": {"source": ["figure 3: Rank of each key term by measured change in the three instruments (rank 1 = changed most). Republican (red), government (navy), and state (green) are highlighted. Lines near horizontal indicate cross-instrument agreement; lines that rise or fall sharply indicate disagreement."]}} tags=["hermeneutics", "figure-relationship-*"]
-# ── Figure 3: Cross-instrument agreement on the ranking of change ─────────────
+```python jdh={"module": "object", "object": {"source": ["Rank of each key term by measured change in the three instruments (rank 1 = changed most). Republican (red), government (navy), and state (green) are highlighted. Lines near horizontal indicate cross-instrument agreement; lines that rise or fall sharply indicate disagreement."]}} tags=["hermeneutics", "figure-relationship-*"]
+# ── Figure 4: Cross-instrument agreement on the ranking of change ─────────────
 # Ranks are derived from the three instruments' APD / drift scores.
 # Rank 1 = changed most. Values reflect the actual rankings reported in Section 3:
 # republican and capital are corroborated across all three instruments;
@@ -811,11 +815,11 @@ Two instruments, two kinds of change, two different historical stories. When the
 <!-- #region tags=["hermeneutics"] -->
 The previous subsections measured how much a word's usage changed *across* periods. This subsection addresses a complementary question: within a single period, was a word being used in many different ways simultaneously, or in one consistent way? A word with high internal variation was a site of active semantic contest — different writers pulling it in different directions at the same time. A word with low variation had settled into a single, stable role.
 
-Three signals in Figure 6 speak directly to the article's central argument. *State* shows the sharpest rise in dispersion (0.40 → 0.47): it was being stretched to cover new institutional realities at the same moment it was converging contextually with *government*. *Republican* moves in the opposite direction — its dispersion falls slightly (0.42 → 0.40) — meaning its uses became more uniform, consistent with consolidation into a narrower, recognisably partisan function. *Liberty*'s dispersion is nearly flat (0.38 → 0.39): its core meaning held stable even as its relational reach expanded outward to new claimants. No term shows a clean split into a wholly new dominant sense, which is itself informative: the changes in this corpus are shifts in emphasis and function, not wholesale replacements of one meaning by another.
+Three signals in Figure 7 speak directly to the article's central argument. *State* shows the sharpest rise in dispersion (0.40 → 0.47): it was being stretched to cover new institutional realities at the same moment it was converging contextually with *government*. *Republican* moves in the opposite direction — its dispersion falls slightly (0.42 → 0.40) — meaning its uses became more uniform, consistent with consolidation into a narrower, recognisably partisan function. *Liberty*'s dispersion is nearly flat (0.38 → 0.39): its core meaning held stable even as its relational reach expanded outward to new claimants. No term shows a clean split into a wholly new dominant sense, which is itself informative: the changes in this corpus are shifts in emphasis and function, not wholesale replacements of one meaning by another.
 <!-- #endregion -->
 
 <!-- #region citation-manager={"citations": {"": []}} tags=["narrative"] -->
-The dispersion and sense-clustering measures add a finer-grained reading. Figure 6 shows within-period dispersion for all nineteen key terms across both periods, making visible at a glance which words were semantically contested within each era. The clearest signals are in within-period dispersion: in GPT-2, the uses of *state* became more varied between the periods (dispersion rising from 0.40 to 0.47) while the uses of *land* became less varied (0.40 to 0.36). A separate measure — sense clustering — asked whether any term actually split into distinct new senses, with one sense growing while another shrank. No term shows that pattern: the Jensen-Shannon divergence over sense clusters was small for every term (below 0.03 throughout). The rising dispersion of *state* is consistent with the disaggregation argument: a word being pulled into more varied uses simultaneously is a word whose role in the old conceptual system is becoming unstable. In plain terms, no word in this corpus underwent a clean break where one meaning died and another took over. The changes were shifts in how words were being used, not replacements of one meaning by another.
+The dispersion and sense-clustering measures add a finer-grained reading. Figure 7 shows within-period dispersion for all nineteen key terms across both periods, making visible at a glance which words were semantically contested within each era. The clearest signals are in within-period dispersion: in GPT-2, the uses of *state* became more varied between the periods (dispersion rising from 0.40 to 0.47) while the uses of *land* became less varied (0.40 to 0.36). A separate measure — sense clustering — asked whether any term actually split into distinct new senses, with one sense growing while another shrank. No term shows that pattern: the Jensen-Shannon divergence over sense clusters was small for every term (below 0.03 throughout). The rising dispersion of *state* is consistent with the disaggregation argument: a word being pulled into more varied uses simultaneously is a word whose role in the old conceptual system is becoming unstable. In plain terms, no word in this corpus underwent a clean break where one meaning died and another took over. The changes were shifts in how words were being used, not replacements of one meaning by another.
 
 The increased dispersion of *state* is suggestive: in the Early National period, the word was being used in a wider range of contextual configurations than in the Founding era, which might reflect the proliferation of distinct entities — state governments, the federal state, European states, the state of affairs — competing for the same word after ratification settled some constitutional questions and opened others. The decreased dispersion of *land* suggests the opposite movement: a term that was used in more uniform, settled contexts by the Early National period, consistent with the transition from revolutionary-era debates over the political status of land toward the more routinized economic sense of land as property and commodity that Appleby identifies as characteristic of Early National political economy <cite data-cite="2237419/WYWAECBF"></cite>.
 <!-- #endregion -->
@@ -823,10 +827,10 @@ The increased dispersion of *state* is suggestive: in the Early National period,
 ### Validation: Close Reading the Passages
 
 <!-- #region tags=["hermeneutics"] -->
-*Figure 6 below shows within-period dispersion for all nineteen key terms in both periods. High dispersion means the word was being used in many different contextual configurations simultaneously — it was a site of active semantic contest. Low dispersion means uniform, settled usage. The chart makes visible a trend that the APD analysis alone cannot show: which words were internally contested within a period, not just across periods.*
+*Figure 7 below shows within-period dispersion for all nineteen key terms in both periods. High dispersion means the word was being used in many different contextual configurations simultaneously — it was a site of active semantic contest. Low dispersion means uniform, settled usage. The chart makes visible a trend that the APD analysis alone cannot show: which words were internally contested within a period, not just across periods.*
 <!-- #endregion -->
 
-```python jdh={"module": "object", "object": {"source": ["figure 6: Within-period dispersion for all nineteen key terms. Navy bars show founding-era dispersion; rust bars show early-national dispersion. Arrows mark terms where the change exceeds 0.06. High dispersion indicates a word being used in many different contextual configurations simultaneously \u2014 a marker of active semantic contest within the period."]}} tags=["hermeneutics", "figure-dispersion-*"]
+```python jdh={"module": "object", "object": {"source": ["Within-period dispersion for all nineteen key terms. Navy bars show founding-era dispersion; rust bars show early-national dispersion. Arrows mark terms where the change exceeds 0.06. High dispersion indicates a word being used in many different contextual configurations simultaneously \u2014 a marker of active semantic contest within the period."]}} tags=["hermeneutics", "figure-dispersion-*"]
 # ── Figure 6: Within-period dispersion for all key terms ─────────────────────
 # Dispersion measures how varied each term's uses were *within* a single period.
 # High dispersion = word used in many different contextual configurations.
@@ -914,7 +918,7 @@ Close reading of the *government* passages tells a complementary story. In the F
 Close reading of the *capital* passages confirms change and specifies its character. In founding-era usage the word is semantically wide: it operates as an adjective meaning important or preeminent ("a capital branch of the business," "Capital Characters," "capital pieces"), as a legal category ("capital Felony," "capital punishment"), as a geographic noun denoting any seat of government ("the Capital of Gallicia," "the ancient Capital of Castile"), and as a financial noun for the principal of a loan or the assets of a trading house ("My Capital And Credits," "pay off the capital of the general debts"). By the Early National period this range has narrowed sharply. The adjectival sense is nearly absent. The legal sense has disappeared from the sample entirely. What remains are two more specialized meanings: the political capital as a specific named place — "the Capital of America," Washington itself, whose seizure and burning in 1814 makes the word newly fraught ("conquest of the capital," "entry of the capital") — and economic capital as an analytical concept in the vocabulary of political economy: "capital can be employed more profitably," "our active capital," "direct his capital to flow in a different channel." That last formulation is the key shift: founding-era passages refer to the principal of a specific loan or the assets of a particular house; early-national passages speak of capital as something that flows between sectors, that shapes trade and industry, that can be directed. The word is entering the register of economic theory — the analytic vocabulary that <cite data-cite="2237419/WYWAECBF"></cite> and <cite data-cite="2237419/YF9YWG29"></cite> show emerging as the dominant idiom of Early National political economy. As the republican synthesis disaggregated, *capital* did not travel with republican ideology into partisan politics; it travelled into political economy. The founding vocabulary was coming apart, and its pieces were moving in different directions.
 <!-- #endregion -->
 
-<!-- #region tags=["narrative"] -->
+<!-- #region citation-manager={"citations": {"": []}} tags=["narrative"] -->
 Close reading of the *liberty* passages confirms the relational finding and gives it historical texture. In Founding-era usage, *liberty* is primarily the possession of the body politic: it appears in contexts of constitutional argument and republican theory — "the spirit of liberty," "the preservation of liberty," "civil liberty" as the condition a republican government exists to protect. It travels closely with *virtue* in these passages, the two forming the paired vocabulary of classical republican thought. By the Early National period the same word has not abandoned that register — republican uses of *liberty* persist — but it has acquired new company. *Liberty* now appears regularly in passages about enslaved people: petitions for manumission, debates over the slave trade, antislavery arguments that invoke freedom precisely because it is being denied. It also appears in passages that treat liberty as an individual economic right, aligned with *property* and *commerce*, the vocabulary of an emerging liberal order.
 
 What the passages show is not a migration from one tradition to another but a simultaneity. The same word is being deployed by writers who would have contested each other's use of it. This is what the relational measurement captures as "outward movement" — not that *liberty* changed its meaning, but that its reach expanded to cover claims whose proponents shared little else. Patterson's argument that freedom was formed through the experience of slavery finds its textual correlate here <cite data-cite="2237419/G3JDZPUP"></cite>: liberty and slavery appear together in these passages not because the writers conflated them but because naming one required naming the other. Morgan's paradox — that the same founding generation could invoke liberty and hold slaves — is not a contradiction the corpus resolves; it is a structural feature the corpus displays <cite data-cite="2237419/5ZLEUMK6"></cite>.
@@ -1379,9 +1383,7 @@ Four limitations bear directly on how results should be read. The first is corpu
 The workflow is a complement to traditional method, not a substitute for it. The relation is the one the *Journal of Digital History* has articulated as *digital hermeneutics* (<cite data-cite="2237419/D62F2C9S"></cite>): a practice that moves deliberately between scaled, computational observation and the close, contextual reading that gives meaning to what the numbers find. A drift score or a cluster diagram is a starting point — it tells a historian where to read; close reading then establishes what changed, how, and why.
 <!-- #endregion -->
 
-<!-- #region citation-manager={"citations": {"": []}} -->
 ## Conclusion
-<!-- #endregion -->
 
 <!-- #region tags=["narrative"] -->
 The central question this paper asks is whether word embeddings can do useful work for intellectual historians — whether a computational measurement of semantic change can tell a historian something they could not have established through close reading alone, and whether the result is trustworthy enough to use as evidence. The demonstration returns a qualified yes. Applied to 160,000 documents of the American Founders' writings, the workflow detects a measurable functional shift in *republican* — from a description of governmental form toward a marker of partisan identity — that is consistent with what historians have argued from close reading but had not been verifiable across a corpus at this scale. It also establishes that *liberty*, one of the most analyzed words in the founding-era literature, is among the most semantically stable: the contestation over what liberty meant did not work through the word shifting its neighborhood but through a stable term being applied to radically unequal people.
@@ -1558,9 +1560,11 @@ tokenizer = GPT2Tokenizer.from_pretrained("ladew222/founders-gpt2")
 Researchers working on early American history or related historical corpora are encouraged to use and build on this model. Full model documentation is available in the [Hugging Face model card](https://huggingface.co/ladew222/founders-gpt2).
 <!-- #endregion -->
 
+<!-- #region editable=true slideshow={"slide_type": ""} tags=["hidden"] -->
 ### How to Cite This Article
+<!-- #endregion -->
 
-<!-- #region tags=["hermeneutics"] -->
+<!-- #region editable=true slideshow={"slide_type": ""} tags=["hermeneutics", "hidden"] -->
 If you use the workflow, the corpus documentation, or the trained model in your own research, please cite:
 
 > Weinberg, Eric (2026). "Tracing Semantic Change in Historical Corpora: A Reproducible Word-Embedding Workflow for Intellectual History." *Journal of Digital History*. DOI: [to be assigned upon publication]
@@ -1578,9 +1582,12 @@ BibTeX:
 ```
 <!-- #endregion -->
 
-## References
+<!-- #region editable=true slideshow={"slide_type": ""} tags=["hidden"] -->
+## References <!-- #region tags=["hidden"] -->
+<!-- #endregion -->
+<!-- #endregion -->
 
-<!-- #region citation-manager={"citations": {"": []}} tags=["hermeneutics"] -->
+<!-- #region citation-manager={"citations": {"": []}} editable=true slideshow={"slide_type": ""} tags=["hermeneutics", "hidden"] -->
 Appleby, Joyce (1984). *Capitalism and a New Social Order: The Republican Vision of the 1790s*. New York University Press. New York.
 
 Bailyn, Bernard (1967). *The Ideological Origins of the American Revolution*. Belknap Press of Harvard University Press. Cambridge, MA.

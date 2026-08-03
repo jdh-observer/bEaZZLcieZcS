@@ -1563,7 +1563,7 @@ Researchers working on early American history or related historical corpora are 
 
 ### How to Cite This Article
 
-<!-- #region tags=["hermeneutics"] -->
+<!-- #region tags=["hidden"] -->
 If you use the workflow, the corpus documentation, or the trained model in your own research, please cite:
 
 > Weinberg, Eric (2026). "Tracing Semantic Change in Historical Corpora: A Reproducible Word-Embedding Workflow for Intellectual History." *Journal of Digital History*. DOI: [to be assigned upon publication]
@@ -1581,9 +1581,11 @@ BibTeX:
 ```
 <!-- #endregion -->
 
-## References
+## References <!-- #region tags=["hidden"] -->
+<!-- #endregion -->
 
-<!-- #region citation-manager={"citations": {"": []}} tags=["hermeneutics"] -->
+<!-- #region citation-manager={"citations": {"": []}} tags=["hidden"] --> #region tags=["hidden"] -->
+<div class="cite2c-biblio"></div>
 Appleby, Joyce (1984). *Capitalism and a New Social Order: The Republican Vision of the 1790s*. New York University Press. New York.
 
 Bailyn, Bernard (1967). *The Ideological Origins of the American Revolution*. Belknap Press of Harvard University Press. Cambridge, MA.

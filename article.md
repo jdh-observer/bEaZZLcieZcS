@@ -174,7 +174,7 @@ print("  (or: docker-compose up  in the journal-of-digital-history-jupyter-stack
 ```
 
 <!-- #region tags=["hermeneutics"] -->
-*Figure 0 below shows the complete analytical pipeline as a workflow diagram. Read it left to right across three columns.*
+*Figure 1 below shows the complete analytical pipeline as a workflow diagram. Read it left to right across three columns.*
 
 *The left column (blue and red) is the corpus layer: assembling the documents, recovering dates, dividing into periods, and training the language model from scratch on the full corpus. The red boxes mark the steps that produce the embedding vectors — the raw material all three measuring instruments share.*
 
@@ -183,8 +183,8 @@ print("  (or: docker-compose up  in the journal-of-digital-history-jupyter-stack
 *The right column is validation and interpretation: the three instruments converge on a cross-instrument ranking, which then directs targeted close reading of the actual passages, which produces the historical argument. Each step in the diagram is documented in Section 2; the demonstration in Section 3 follows this structure.*
 <!-- #endregion -->
 
-```python jdh={"module": "object", "object": {"source": ["figure 0: Analytical pipeline from the Founders corpus to historical argument. The three measuring instruments (GPT-2, ModernBERT, PPMI) operate in parallel on the same corpus; cross-instrument agreement determines evidential weight."]}} tags=["hermeneutics", "figure-workflow-*"]
-# ── Figure 0: Workflow diagram ────────────────────────────────────────────────
+```python jdh={"module": "object", "object": {"source": ["figure 1: Analytical pipeline from the Founders corpus to historical argument. The three measuring instruments (GPT-2, ModernBERT, PPMI) operate in parallel on the same corpus; cross-instrument agreement determines evidential weight."]}} tags=["hermeneutics", "figure-workflow-*"]
+# ── Figure 1: Workflow diagram ────────────────────────────────────────────────
 # This figure summarises the complete analytical pipeline described in Section 2.
 # It is generated entirely from matplotlib — no external data required.
 

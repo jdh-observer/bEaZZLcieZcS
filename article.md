@@ -301,11 +301,11 @@ To make change visible, the corpus is divided into periods. Segmentation is an i
 <!-- #endregion -->
 
 <!-- #region tags=["hermeneutics"] -->
-*Figure 1 below is generated from the documented document-count data for the Founders corpus. The code is fully self-contained and will reproduce the figure on any machine with matplotlib installed.*
+*Figure 2 below is generated from the documented document-count data for the Founders corpus. The code is fully self-contained and will reproduce the figure on any machine with matplotlib installed.*
 <!-- #endregion -->
 
-```python jdh={"module": "object", "object": {"source": ["figure 1: Documents per decade in the Founders corpus. Navy bars show the Founding era (1770\u20131789); rust bars show the Early National period (1800\u20131819). The 1790s are excluded as a deliberate buffer between the two compared periods."]}} tags=["hermeneutics", "figure-corpus-*"]
-# ── Figure 1: Founders corpus composition by decade ──────────────────────────
+```python jdh={"module": "object", "object": {"source": ["figure 2: Documents per decade in the Founders corpus. Navy bars show the Founding era (1770\u20131789); rust bars show the Early National period (1800\u20131819). The 1790s are excluded as a deliberate buffer between the two compared periods."]}} tags=["hermeneutics", "figure-corpus-*"]
+# ── Figure 2: Founders corpus composition by decade ──────────────────────────
 # All values come from the corpus scan documented in Section 3.
 # This cell is fully self-contained and reproducible.
 
@@ -501,7 +501,7 @@ Validation is part of the method, not an afterthought. Four checks are built in.
 <!-- #region tags=["narrative"] -->
 This section applies the workflow to the Founders corpus and reports the results. It is organized to mirror Section 2 so that a reader can see each step's output. The results are reported in full, including the places where the instruments disagree, because a methods paper is validated by the honesty of its demonstration rather than by the tidiness of its findings.
 
-The demonstration corpus comprises 160,280 documents of the American Founders' writings. Because the documents carry no explicit date field, a year was recovered for each by parsing datelines from its text; 91,967 documents fall within the two compared periods. Their distribution by decade is shown in Figure 1.
+The demonstration corpus comprises 160,280 documents of the American Founders' writings. Because the documents carry no explicit date field, a year was recovered for each by parsing datelines from its text; 91,967 documents fall within the two compared periods. Their distribution by decade is shown in Figure 2.
 <!-- #endregion -->
 
 For each of the nineteen key terms the workflow sampled up to 100 occurrences per period. Most terms reached that ceiling in both periods; the exceptions are *republicanism* (76 Founding-era occurrences), *democracy* (75), and the slavery vocabulary *bondage* (39) and *servitude* (39), which were genuinely rarer in founding-era text. Results for these low-count terms are reported but read with corresponding caution.

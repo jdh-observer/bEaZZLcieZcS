@@ -77,7 +77,7 @@ The tables below display the actual sentences surfaced by the workflow for the t
 tables 2-4: Sampled founding-era and early-national passages for the three strongest candidates (*republican*, *government*, *capital*). Each passage is drawn from a random sample of the top-ranked occurrences as determined by the APD analysis. Italics mark the target term in context.
 <!-- #endregion -->
 
-<!-- #region jdh={"module": "object", "object": {"source": ["Table 2: *Republican* \u2014 sampled passages by period"]}} tags=["table-2"] -->
+<!-- #region jdh={"module": "object", "object": {"source": ["*Republican* \u2014 sampled passages by period"]}} tags=["table-2"] -->
 | Period | Passage (sampled occurrence) |
 |---|---|
 | Founding era | "We shall never be on a solid footing till we establish a **republican** form of government." |
@@ -91,7 +91,7 @@ tables 2-4: Sampled founding-era and early-national passages for the three stron
 
 <!-- #endregion -->
 
-<!-- #region jdh={"module": "object", "object": {"source": ["Table 3: *Government* \u2014 sampled passages by period"]}} tags=["table-3"] -->
+<!-- #region jdh={"module": "object", "object": {"source": ["*Government* \u2014 sampled passages by period"]}} tags=["table-3"] -->
 | Period | Passage (sampled occurrence) |
 |---|---|
 | Founding era | "The present unsettled state of **government** is truly alarming." |
@@ -105,7 +105,7 @@ tables 2-4: Sampled founding-era and early-national passages for the three stron
 
 <!-- #endregion -->
 
-<!-- #region jdh={"module": "object", "object": {"source": ["Table 4: *Capital* \u2014 sampled passages by period"]}} tags=["table-4"] -->
+<!-- #region jdh={"module": "object", "object": {"source": ["*Capital* \u2014 sampled passages by period"]}} tags=["table-4"] -->
 | Period | Passage (sampled occurrence) |
 |---|---|
 | Founding era | "This is a **capital** branch of the business and must not be neglected." |
@@ -183,7 +183,7 @@ print("  (or: docker-compose up  in the journal-of-digital-history-jupyter-stack
 *The right column is validation and interpretation: the three instruments converge on a cross-instrument ranking, which then directs targeted close reading of the actual passages, which produces the historical argument. Each step in the diagram is documented in Section 2; the demonstration in Section 3 follows this structure.*
 <!-- #endregion -->
 
-```python jdh={"module": "object", "object": {"source": ["figure 1: Analytical pipeline from the Founders corpus to historical argument. The three measuring instruments (GPT-2, ModernBERT, PPMI) operate in parallel on the same corpus; cross-instrument agreement determines evidential weight."]}} tags=["hermeneutics", "figure-workflow-*"]
+```python jdh={"module": "object", "object": {"source": ["Analytical pipeline from the Founders corpus to historical argument. The three measuring instruments (GPT-2, ModernBERT, PPMI) operate in parallel on the same corpus; cross-instrument agreement determines evidential weight."]}} tags=["hermeneutics", "figure-workflow-*"]
 # ── Figure 1: Workflow diagram ────────────────────────────────────────────────
 # This figure summarises the complete analytical pipeline described in Section 2.
 # It is generated entirely from matplotlib — no external data required.
@@ -304,7 +304,7 @@ To make change visible, the corpus is divided into periods. Segmentation is an i
 *Figure 2 below is generated from the documented document-count data for the Founders corpus. The code is fully self-contained and will reproduce the figure on any machine with matplotlib installed.*
 <!-- #endregion -->
 
-```python jdh={"module": "object", "object": {"source": ["figure 2: Documents per decade in the Founders corpus. Navy bars show the Founding era (1770\u20131789); rust bars show the Early National period (1800\u20131819). The 1790s are excluded as a deliberate buffer between the two compared periods."]}} tags=["hermeneutics", "figure-corpus-*"]
+```python jdh={"module": "object", "object": {"source": ["Documents per decade in the Founders corpus. Navy bars show the Founding era (1770\u20131789); rust bars show the Early National period (1800\u20131819). The 1790s are excluded as a deliberate buffer between the two compared periods."]}} tags=["hermeneutics", "figure-corpus-*"]
 # ── Figure 2: Founders corpus composition by decade ──────────────────────────
 # All values come from the corpus scan documented in Section 3.
 # This cell is fully self-contained and reproducible.
@@ -506,7 +506,7 @@ The demonstration corpus comprises 160,280 documents of the American Founders' w
 
 For each of the nineteen key terms the workflow sampled up to 100 occurrences per period. Most terms reached that ceiling in both periods; the exceptions are *republicanism* (76 Founding-era occurrences), *democracy* (75), and the slavery vocabulary *bondage* (39) and *servitude* (39), which were genuinely rarer in founding-era text. Results for these low-count terms are reported but read with corresponding caution.
 
-<!-- #region jdh={"module": "object", "object": {"source": ["table 1: Founders corpus composition by period. The 1790s are excluded as a deliberate buffer between the two compared periods."]}} tags=["table-1"] -->
+<!-- #region jdh={"module": "object", "object": {"source": ["Founders corpus composition by period. The 1790s are excluded as a deliberate buffer between the two compared periods."]}} tags=["table-1"] -->
 | Period | Decades | Documents |
 |---|---|---|
 | Founding era | 1770s–1780s | 47,217 |
@@ -524,7 +524,7 @@ Figure 3 reports how much each of the nineteen key terms changed between the Fou
 For each key term the workflow measured the average pairwise distance (APD) between its Founding-era and Early-National occurrences and tested that distance against a permutation null. Figure 3 reports the result for the primary instrument, the corpus-trained GPT-2 model.
 <!-- #endregion -->
 
-```python jdh={"module": "object", "object": {"source": ["figure 3: APD permutation z-scores (GPT-2). Bars are dark where a term clears the uncorrected permutation null at p \u2264 0.05; landmark words are grey. After Benjamini\u2013Hochberg correction for 26 simultaneous tests, no term reaches significance at p \u2264 0.05."]}} tags=["hermeneutics", "figure-apd-*"]
+```python jdh={"module": "object", "object": {"source": ["APD permutation z-scores (GPT-2). Bars are dark where a term clears the uncorrected permutation null at p \u2264 0.05; landmark words are grey. After Benjamini\u2013Hochberg correction for 26 simultaneous tests, no term reaches significance at p \u2264 0.05."]}} tags=["hermeneutics", "figure-apd-*"]
 # ── Figure 3: APD permutation z-scores (GPT-2 primary instrument) ────────────
 # Data: actual permutation-test results from the Founders corpus analysis.
 # z-scores and p-values are the values reported in Section 3.
@@ -624,7 +624,7 @@ The instrument disagreement on *republican* is also informative and should not b
 Figure 4 gives an overview: a two-dimensional projection of the key terms in the single shared coordinate space, one panel per period. Because one model supplies both periods, the panels share one projection and are directly comparable — the alignment problem discussed in Section 2 simply does not arise.
 <!-- #endregion -->
 
-```python jdh={"module": "object", "object": {"source": ["figure 5: Key terms projected into one shared GPT-2 coordinate space using PCA (L2-normalized, mean-centered prototype vectors). Both panels use the same projection, so positions are directly comparable across periods."]}} tags=["hermeneutics", "figure-cross-*"]
+```python jdh={"module": "object", "object": {"source": ["Key terms projected into one shared GPT-2 coordinate space using PCA (L2-normalized, mean-centered prototype vectors). Both panels use the same projection, so positions are directly comparable across periods."]}} tags=["hermeneutics", "figure-cross-*"]
 # ── Figure 6: Semantic relationship map ──────────────────────────────────────
 # This figure requires the pre-computed GPT-2 prototype embedding vectors
 # (embeddings.npz + embeddings_manifest.json from the repository data layer).
@@ -663,7 +663,7 @@ Two things are visible in the map. The broad relational structure is stable: the
 The workflow then measured how the cosine similarity between pairs of concepts changed across the two periods. Figure 5 places the contextual GPT-2 measure beside the non-neural PPMI baseline for the eleven tracked pairs.
 <!-- #endregion -->
 
-```python jdh={"module": "object", "object": {"source": ["figure 5: Change in pairwise cosine similarity from the Founding era to the Early National period for GPT-2 (navy) and PPMI (rust). Where the two instruments diverge in sign \u2014 as with republican\u2013commerce and republican\u2013virtue \u2014 close reading is required to resolve the disagreement."]}} tags=["hermeneutics", "figure-relational-*"]
+```python jdh={"module": "object", "object": {"source": ["Change in pairwise cosine similarity from the Founding era to the Early National period for GPT-2 (navy) and PPMI (rust). Where the two instruments diverge in sign \u2014 as with republican\u2013commerce and republican\u2013virtue \u2014 close reading is required to resolve the disagreement."]}} tags=["hermeneutics", "figure-relational-*"]
 # ── Figure 4: Relational change, GPT-2 vs PPMI ───────────────────────────────
 # Change in cosine similarity between concept pairs, Founding era → Early National.
 # All values are from the analysis reported in Section 3.
@@ -742,7 +742,7 @@ The *government–state* pair shows cross-instrument agreement — both instrume
 Comparing the three instruments on which terms changed most (Figure 6) gives the demonstration its firmest result and its main caution. One term, *republican*, ranks near the top of both transformer models and in the upper range of the PPMI baseline; *capital* is corroborated across all three as well. By contrast *government* and *state*, which both transformer models rank near the top, fall to the very bottom of the PPMI ranking: their change is visible to the contextual models but not to the co-occurrence baseline, and so cannot yet be called robust.
 <!-- #endregion -->
 
-```python jdh={"module": "object", "object": {"source": ["figure 3: Rank of each key term by measured change in the three instruments (rank 1 = changed most). Republican (red), government (navy), and state (green) are highlighted. Lines near horizontal indicate cross-instrument agreement; lines that rise or fall sharply indicate disagreement."]}} tags=["hermeneutics", "figure-relationship-*"]
+```python jdh={"module": "object", "object": {"source": ["Rank of each key term by measured change in the three instruments (rank 1 = changed most). Republican (red), government (navy), and state (green) are highlighted. Lines near horizontal indicate cross-instrument agreement; lines that rise or fall sharply indicate disagreement."]}} tags=["hermeneutics", "figure-relationship-*"]
 # ── Figure 4: Cross-instrument agreement on the ranking of change ─────────────
 # Ranks are derived from the three instruments' APD / drift scores.
 # Rank 1 = changed most. Values reflect the actual rankings reported in Section 3:
@@ -829,7 +829,7 @@ The increased dispersion of *state* is suggestive: in the Early National period,
 *Figure 7 below shows within-period dispersion for all nineteen key terms in both periods. High dispersion means the word was being used in many different contextual configurations simultaneously — it was a site of active semantic contest. Low dispersion means uniform, settled usage. The chart makes visible a trend that the APD analysis alone cannot show: which words were internally contested within a period, not just across periods.*
 <!-- #endregion -->
 
-```python jdh={"module": "object", "object": {"source": ["figure 7: Within-period dispersion for all nineteen key terms. Navy bars show founding-era dispersion; rust bars show early-national dispersion. Arrows mark terms where the change exceeds 0.06. High dispersion indicates a word being used in many different contextual configurations simultaneously \u2014 a marker of active semantic contest within the period."]}} tags=["hermeneutics", "figure-dispersion-*"]
+```python jdh={"module": "object", "object": {"source": ["Within-period dispersion for all nineteen key terms. Navy bars show founding-era dispersion; rust bars show early-national dispersion. Arrows mark terms where the change exceeds 0.06. High dispersion indicates a word being used in many different contextual configurations simultaneously \u2014 a marker of active semantic contest within the period."]}} tags=["hermeneutics", "figure-dispersion-*"]
 # ── Figure 6: Within-period dispersion for all key terms ─────────────────────
 # Dispersion measures how varied each term's uses were *within* a single period.
 # High dispersion = word used in many different contextual configurations.

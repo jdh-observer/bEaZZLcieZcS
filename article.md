@@ -13,7 +13,7 @@ jupyter:
     name: python3
 ---
 
-<!-- #region tags=["title"] -->
+<!-- #region editable=true slideshow={"slide_type": ""} tags=["title"] -->
 # Tracing Semantic Change in Historical Corpora: A Reproducible Word-Embedding Workflow for Intellectual History
 ### With a demonstration on the writings of the American Founders
 <!-- #endregion -->
@@ -53,11 +53,11 @@ The workflow departs from standard diachronic practice by training a language mo
 
 ## Introduction
 
-<!-- #region citation-manager={"citations": {"": []}} tags=["narrative"] -->
+<!-- #region citation-manager={"citations": {"": []}} editable=true slideshow={"slide_type": ""} tags=["narrative"] -->
 The meanings of politically charged words change, and tracking those changes is one of the oldest tasks in intellectual history. The historiography of the American founding has built a substantial literature on the problem: from Bailyn on the ideological origins of the Revolution to Wood on the creation of the republic, from Pocock on the Machiavellian moment to Rodgers's sharp observation that *republicanism* was less a coherent ideology than a career concept, perpetually overextended and reshaped by the arguments historians used it to describe <cite data-cite="2237419/LWGJZ7XF"></cite>. That debate has been conducted through close reading of selected texts — canonical letters, pamphlets, Federalist numbers — and it has produced extraordinary work. It has also hit a ceiling. Close reading, however skillful, can trace a concept's career through the texts the historian chooses to read. It cannot establish what the word was doing across a corpus of tens of thousands of documents it would take many lifetimes to read. The consequences of mass digitisation for historical method — both what it enables and what biases it introduces — have been analysed by <cite data-cite="2237419/FBHS99AM"></cite> in terms    that apply directly to any corpus-based inquiry. Reinhart Koselleck's *Begriffsgeschichte* identified this problem precisely — that the semantic careers of politically charged concepts must be reconstructed from actual usage, not assumed stable <cite data-cite="2237419/WLSQGL9Z"></cite> — but the *Geschichtliche Grundbegriffe* worked through carefully curated canonical texts and had no way to ask what ordinary correspondence was doing with the same words.
 <!-- #endregion -->
 
-<!-- #region citation-manager={"citations": {"": []}} tags=["narrative"] -->
+<!-- #region citation-manager={"citations": {"": []}} editable=true slideshow={"slide_type": ""} tags=["narrative"] -->
 This article proposes a method for historians that addresses that problem, and demonstrates it on the Founders' writings. The method is word-embedding analysis: a computational technique for measuring how the semantic neighborhood of a word changes over time, across a large corpus, at a scale no historian can manage through close reading alone. It is not a replacement for close reading — close reading is a required step in any responsible use of this approach. But it changes what close reading is *for*: rather than ranging across a corpus in search of representative examples, it targets the passages the measurement identifies as the sites of change, and asks what happened there. The result is a combination of scaled observation and close interpretation that the digital history literature calls *scaled reading* <cite data-cite="2237419/D62F2C9S"></cite> — and that is, in practice, the movement between pattern and document that historians have always made, now made tractable at a scale the pattern was previously invisible.
 
 The method relies on transformer language models trained directly on the historical corpus. Transformer models encode each word in terms of its surrounding context rather than as a fixed vector: the same word in two different sentences produces two different internal representations. That contextual sensitivity is what makes them suited to this problem. When a word's functional role changes — when it stops being theorised and starts being deployed as a credential — the contexts it appears in change with it, and the model's representations capture that shift directly. Co-occurrence models can detect that a word moved into new company; contextual models can detect that the word itself was doing something different even in familiar company.
@@ -174,7 +174,7 @@ print("  pip install matplotlib numpy pandas")
 print("  (or: docker-compose up  in the journal-of-digital-history-jupyter-stack)")
 ```
 
-<!-- #region tags=["hermeneutics"] -->
+<!-- #region editable=true slideshow={"slide_type": ""} tags=["hermeneutics"] -->
 *Figure 1 below shows the complete analytical pipeline as a workflow diagram. Read it left to right across three columns.*
 
 *The left column (blue and red) is the corpus layer: assembling the documents, recovering dates, dividing into periods, and training the language model from scratch on the full corpus. The red boxes mark the steps that produce the embedding vectors — the raw material all three measuring instruments share.*
@@ -918,7 +918,7 @@ Close reading of the *government* passages tells a complementary story. In the F
 Close reading of the *capital* passages confirms change and specifies its character. In founding-era usage the word is semantically wide: it operates as an adjective meaning important or preeminent ("a capital branch of the business," "Capital Characters," "capital pieces"), as a legal category ("capital Felony," "capital punishment"), as a geographic noun denoting any seat of government ("the Capital of Gallicia," "the ancient Capital of Castile"), and as a financial noun for the principal of a loan or the assets of a trading house ("My Capital And Credits," "pay off the capital of the general debts"). By the Early National period this range has narrowed sharply. The adjectival sense is nearly absent. The legal sense has disappeared from the sample entirely. What remains are two more specialized meanings: the political capital as a specific named place — "the Capital of America," Washington itself, whose seizure and burning in 1814 makes the word newly fraught ("conquest of the capital," "entry of the capital") — and economic capital as an analytical concept in the vocabulary of political economy: "capital can be employed more profitably," "our active capital," "direct his capital to flow in a different channel." That last formulation is the key shift: founding-era passages refer to the principal of a specific loan or the assets of a particular house; early-national passages speak of capital as something that flows between sectors, that shapes trade and industry, that can be directed. The word is entering the register of economic theory — the analytic vocabulary that <cite data-cite="2237419/WYWAECBF"></cite> and <cite data-cite="2237419/YF9YWG29"></cite> show emerging as the dominant idiom of Early National political economy. As the republican synthesis disaggregated, *capital* did not travel with republican ideology into partisan politics; it travelled into political economy. The founding vocabulary was coming apart, and its pieces were moving in different directions.
 <!-- #endregion -->
 
-<!-- #region tags=["narrative"] -->
+<!-- #region citation-manager={"citations": {"": []}} tags=["narrative"] -->
 Close reading of the *liberty* passages confirms the relational finding and gives it historical texture. In Founding-era usage, *liberty* is primarily the possession of the body politic: it appears in contexts of constitutional argument and republican theory — "the spirit of liberty," "the preservation of liberty," "civil liberty" as the condition a republican government exists to protect. It travels closely with *virtue* in these passages, the two forming the paired vocabulary of classical republican thought. By the Early National period the same word has not abandoned that register — republican uses of *liberty* persist — but it has acquired new company. *Liberty* now appears regularly in passages about enslaved people: petitions for manumission, debates over the slave trade, antislavery arguments that invoke freedom precisely because it is being denied. It also appears in passages that treat liberty as an individual economic right, aligned with *property* and *commerce*, the vocabulary of an emerging liberal order.
 
 What the passages show is not a migration from one tradition to another but a simultaneity. The same word is being deployed by writers who would have contested each other's use of it. This is what the relational measurement captures as "outward movement" — not that *liberty* changed its meaning, but that its reach expanded to cover claims whose proponents shared little else. Patterson's argument that freedom was formed through the experience of slavery finds its textual correlate here <cite data-cite="2237419/G3JDZPUP"></cite>: liberty and slavery appear together in these passages not because the writers conflated them but because naming one required naming the other. Morgan's paradox — that the same founding generation could invoke liberty and hold slaves — is not a contradiction the corpus resolves; it is a structural feature the corpus displays <cite data-cite="2237419/5ZLEUMK6"></cite>.
@@ -1383,9 +1383,7 @@ Four limitations bear directly on how results should be read. The first is corpu
 The workflow is a complement to traditional method, not a substitute for it. The relation is the one the *Journal of Digital History* has articulated as *digital hermeneutics* (<cite data-cite="2237419/D62F2C9S"></cite>): a practice that moves deliberately between scaled, computational observation and the close, contextual reading that gives meaning to what the numbers find. A drift score or a cluster diagram is a starting point — it tells a historian where to read; close reading then establishes what changed, how, and why.
 <!-- #endregion -->
 
-<!-- #region citation-manager={"citations": {"": []}} -->
 ## Conclusion
-<!-- #endregion -->
 
 <!-- #region tags=["narrative"] -->
 The central question this paper asks is whether word embeddings can do useful work for intellectual historians — whether a computational measurement of semantic change can tell a historian something they could not have established through close reading alone, and whether the result is trustworthy enough to use as evidence. The demonstration returns a qualified yes. Applied to 160,000 documents of the American Founders' writings, the workflow detects a measurable functional shift in *republican* — from a description of governmental form toward a marker of partisan identity — that is consistent with what historians have argued from close reading but had not been verifiable across a corpus at this scale. It also establishes that *liberty*, one of the most analyzed words in the founding-era literature, is among the most semantically stable: the contestation over what liberty meant did not work through the word shifting its neighborhood but through a stable term being applied to radically unequal people.
@@ -1562,9 +1560,11 @@ tokenizer = GPT2Tokenizer.from_pretrained("ladew222/founders-gpt2")
 Researchers working on early American history or related historical corpora are encouraged to use and build on this model. Full model documentation is available in the [Hugging Face model card](https://huggingface.co/ladew222/founders-gpt2).
 <!-- #endregion -->
 
+<!-- #region editable=true slideshow={"slide_type": ""} tags=["hidden"] -->
 ### How to Cite This Article
+<!-- #endregion -->
 
-<!-- #region tags=["hidden"] -->
+<!-- #region editable=true slideshow={"slide_type": ""} tags=["hermeneutics", "hidden"] -->
 If you use the workflow, the corpus documentation, or the trained model in your own research, please cite:
 
 > Weinberg, Eric (2026). "Tracing Semantic Change in Historical Corpora: A Reproducible Word-Embedding Workflow for Intellectual History." *Journal of Digital History*. DOI: [to be assigned upon publication]
@@ -1582,11 +1582,12 @@ BibTeX:
 ```
 <!-- #endregion -->
 
+<!-- #region editable=true slideshow={"slide_type": ""} tags=["hidden"] -->
 ## References <!-- #region tags=["hidden"] -->
 <!-- #endregion -->
+<!-- #endregion -->
 
-<!-- #region citation-manager={"citations": {"": []}} tags=["hidden"] --> #region tags=["hidden"] -->
-<div class="cite2c-biblio"></div>
+<!-- #region citation-manager={"citations": {"": []}} editable=true slideshow={"slide_type": ""} tags=["hermeneutics", "hidden"] -->
 Appleby, Joyce (1984). *Capitalism and a New Social Order: The Republican Vision of the 1790s*. New York University Press. New York.
 
 Bailyn, Bernard (1967). *The Ideological Origins of the American Revolution*. Belknap Press of Harvard University Press. Cambridge, MA.

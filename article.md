@@ -501,14 +501,14 @@ This section applies the workflow to the Founders corpus and reports the results
 The demonstration corpus comprises 160,280 documents of the American Founders' writings. Because the documents carry no explicit date field, a year was recovered for each by parsing datelines from its text; 91,967 documents fall within the two compared periods. Their distribution by decade is shown in Figure 1.
 <!-- #endregion -->
 
+For each of the nineteen key terms the workflow sampled up to 100 occurrences per period. Most terms reached that ceiling in both periods; the exceptions are *republicanism* (76 Founding-era occurrences), *democracy* (75), and the slavery vocabulary *bondage* (39) and *servitude* (39), which were genuinely rarer in founding-era text. Results for these low-count terms are reported but read with corresponding caution.
+
 <!-- #region jdh={"module": "object", "object": {"source": ["table 1: Founders corpus composition by period. The 1790s are excluded as a deliberate buffer between the two compared periods."]}} tags=["table-1"] -->
 | Period | Decades | Documents |
 |---|---|---|
 | Founding era | 1770s–1780s | 47,217 |
 | Early National | 1800s–1810s | 43,373 |
 | (excluded buffer) | 1790s | 29,416 |
-
-For each of the nineteen key terms the workflow sampled up to 100 occurrences per period. Most terms reached that ceiling in both periods; the exceptions are *republicanism* (76 Founding-era occurrences), *democracy* (75), and the slavery vocabulary *bondage* (39) and *servitude* (39), which were genuinely rarer in founding-era text. Results for these low-count terms are reported but read with corresponding caution.
 <!-- #endregion -->
 
 ### Semantic Change and Its Significance

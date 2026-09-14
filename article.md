@@ -360,7 +360,7 @@ For each term, the workflow gathers the sentences in which it occurs, separately
 
 ```python tags=["hermeneutics"]
 # ── Model training overview (hermeneutic documentation) ──────────────────────
-# Full training scripts are in the /script/ directory of this repository.
+# Full analysis scripts are in the /script/ directory of this repository.
 #
 # Architecture: GPT-2 (12 layers, 768 hidden, 12 heads — ~117M parameters)
 # Training data: Founders Online corpus, 160,280 documents
@@ -490,7 +490,7 @@ Because any one model embeds its own assumptions, the workflow runs the same cor
 <!-- #endregion -->
 
 <!-- #region tags=["hermeneutics"] -->
-Validation is part of the method, not an afterthought. Four checks are built in. *Seed stability*: the context sampling is repeated across several random seeds, and the rank stability of the change measures is reported. *Anisotropy*: transformer hidden states do not spread evenly across vector space — they cluster in one region, a geometric property called anisotropy — which means that absolute cosine similarity values cannot be trusted as direct measurements of meaning-closeness; the workflow therefore relies on relative measures, rankings, and the permutation test rather than on absolute magnitudes. *Cross-instrument convergence*: a result is trusted in proportion to how many of the independent instruments agree on it. *Historiographical and close-reading validation*: the permutation test identifies where change occurred, and the workflow then surfaces the actual passages behind the largest measured changes, so that a historian can read them, establish what changed, and check it against the existing historiography.
+Validation is part of the method, not an afterthought. These diagnostics are not extra technical decoration; they determine how much historical weight each computational result is allowed to bear. Four checks are built in. *Seed stability*: the context sampling is repeated across several random seeds, and the rank stability of the change measures is reported. *Anisotropy*: transformer hidden states do not spread evenly across vector space — they cluster in one region, a geometric property called anisotropy — which means that absolute cosine similarity values cannot be trusted as direct measurements of meaning-closeness; the workflow therefore relies on relative measures, rankings, and the permutation test rather than on absolute magnitudes. *Cross-instrument convergence*: a result is trusted in proportion to how many of the independent instruments agree on it. *Historiographical and close-reading validation*: the permutation test identifies where change occurred, and the workflow then surfaces the actual passages behind the largest measured changes, so that a historian can read them, establish what changed, and check it against the existing historiography.
 <!-- #endregion -->
 
 ## Demonstration: The Founders Corpus
@@ -500,7 +500,7 @@ Validation is part of the method, not an afterthought. Four checks are built in.
 <!-- #endregion -->
 
 <!-- #region tags=["narrative"] -->
-This section applies the workflow to the Founders corpus and reports the results. It is organized to mirror “The Workflow” so that a reader can see each step's output. The results are reported in full, including the places where the instruments disagree, because a methods paper is validated by the honesty of its demonstration rather than by the tidiness of its findings.
+The Founders demonstration begins with a deliberately conservative question: when the workflow is applied to a large, well-studied historical corpus, which conceptual terms actually move, which stay stable, and which relationships among words reorganize? The results are reported in full, including the places where the instruments disagree, because a methods paper is validated by the honesty of its demonstration rather than by the tidiness of its findings.
 
 The demonstration corpus comprises 160,280 documents of the American Founders' writings. Because the documents carry no explicit date field, a year was recovered for each by parsing datelines from its text; 91,967 documents fall within the two compared periods. Their distribution by decade is shown in Figure 2.
 <!-- #endregion -->
@@ -935,7 +935,7 @@ The cells in this section require no knowledge of Python or machine learning. Ea
 
 To run a cell: click on it and press **Shift + Enter** (or click the ▶ button in the toolbar).
 
-The three explorers are the article's interactive layer — not a summary of “Demonstration: The Founders Corpus” but an open interface to its measurements. A reader who wants to test a term the demonstration did not examine, probe a concept central to their own research, or verify that the workflow returns sensible results for a word they know well can do that here without touching any code.
+The four explorers are the article's interactive layer — not a summary of “Demonstration: The Founders Corpus” but an open interface to its measurements. Each explorer works like a small menu: choose a word, a pair of words, or one of the displayed relationship maps, then rerun the cell to see how the interpretation changes. A reader who wants to test a term the demonstration did not examine, probe a concept central to their own research, or verify that the workflow returns sensible results for a word they know well can do that here without touching the underlying pipeline.
 
 A few things to know before reading the output. APD scores are relative, not absolute: what matters is where a term falls in the ranked list, not the number itself. The permutation p-value is a gate, not a verdict — a result that does not reach the significance threshold means the signal is weak, not that nothing happened. And some terms the model will not measure: if a word appears fewer than ten times in one of the two periods, the cell returns a warning rather than a score. That is not a software error. Rare terms are genuinely harder to measure, and the workflow says so rather than producing a number of false precision.
 
@@ -1507,9 +1507,9 @@ This section constitutes the article's data layer. It documents the two primary 
 
 **Selection.** All documents in the archive were downloaded and retained regardless of genre (letters, state papers, diary entries, memoranda). No thematic filtering was applied. Documents were included if a year could be recovered from the dateline.
 
-**Date recovery.** Because the archive supplies no structured date field, a year was recovered for each document by parsing the dateline from its text using regular-expression matching. Documents for which no year could be recovered were excluded from the period analysis but retained in the training corpus. The date-recovery procedure is documented in `/script/parse_dates.py`.
+**Date recovery.** Because the archive supplies no structured date field, a year was recovered for each document by parsing the dateline from its text using regular-expression matching. Documents for which no year could be recovered were excluded from the period analysis but retained in the training corpus. The date-recovery procedure is documented in `/script/analysis_core.py`.
 
-**Period boundaries.** Two periods are compared: a Founding era (1770–1789) and an Early National period (1800–1819). The 1790s are excluded as a deliberate buffer. This choice is documented and justified in “The Workflow”. Period boundaries are treated as explicit parameters; a historian wishing to test alternative periodizations can change them in `/script/config.py`.
+**Period boundaries.** Two periods are compared: a Founding era (1770–1789) and an Early National period (1800–1819). The 1790s are excluded as a deliberate buffer. This choice is documented and justified in “The Workflow”. Period boundaries are treated as explicit parameters; a historian wishing to test alternative periodizations can change them in `/script/analysis_core.py`.
 
 **Known gaps and limitations.** The corpus represents the papers of a small, male, predominantly wealthy elite. It does not include documents that have not been digitized, documents held in private collections, or the writings of women and enslaved people in this period — a gap that bears directly on the stability of *liberty* and *slavery* reported in “Demonstration: The Founders Corpus”. The corpus is a purposive sample, not a representative one, and results should be read accordingly.
 <!-- #endregion -->
@@ -1517,7 +1517,7 @@ This section constitutes the article's data layer. It documents the two primary 
 ```python tags=["hermeneutics"]
 # ── Corpus statistics (data layer documentation) ─────────────────────────────
 # The counts below are from the corpus scan reported in “Demonstration: The Founders Corpus”.
-# Full scan code: /script/scan_corpus.py
+# Full scan code: /script/analysis_core.py
 
 corpus_stats = {
     "total_documents":       160280,
